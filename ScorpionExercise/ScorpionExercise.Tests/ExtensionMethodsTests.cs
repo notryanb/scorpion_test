@@ -35,8 +35,16 @@ namespace ScorpionExercise.Tests
             [Test]
             public void ChunksAreCorrectSize5()
             {
-                var result = "1111222233334444".Chunk(4);
+                var result = "1111222233334444".Chunk(5);
                 var expected = new List<string>() { "11112", "22233", "33444", "4" };
+                Assert.That(result, Is.EquivalentTo(expected));
+            }
+
+            [Test]
+            public void ChunksAreCorrectSize7()
+            {
+                var result = "1111222233334444".Chunk(7);
+                var expected = new List<string>() { "1111222", "2333344", "44" };
                 Assert.That(result, Is.EquivalentTo(expected));
             }
 
